@@ -14,7 +14,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <nav className="max-w-screen-lg mx-auto py-4 px-4 w-full">
           <div className="flex items-center w-full">
             {/* Left side (Logo and Nav links) */}
-            <div className="font-syncopate text-3xl mr-8">TECHQUILL</div>
+            <div className="font-syncopate text-2xl mr-8">
+              <Link href="/" className="">
+                TECHQUILL
+              </Link>
+            </div>
             <ul className="flex justify-start space-x-8 flex-grow">
               <li className="flex items-center justify-center">
                 <Link href="/" className="hover:underline">
