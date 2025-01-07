@@ -94,7 +94,9 @@ const FullScreenDrawer: React.FC<FullScreenDrawerProps> = ({ children }) => {
       {/* Background Overlay */}
       {isOpen && (
         <div
-          className="fixed top-0 left-0 w-full h-full bg-black opacity-50 z-30"
+          className={`fixed top-0 left-0 w-full h-full bg-background z-30 transition-opacity duration-300 ${
+            isOpen ? "opacity-50 visible" : "opacity-0 invisible"
+          }`}
           onClick={toggleDrawer}
         ></div>
       )}
