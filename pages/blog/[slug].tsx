@@ -1,8 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { fetchBlogPosts } from "../../lib/storyblok";
-import { BlogPost } from "../../lib/storyblok"; // Import the BlogPost interface
+import { BlogPost } from "../../lib/storyblok";
 import Image from "next/image";
-// import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import BlogPostContent from "../../components/blogPostContent";
 import { formatDate } from "../../lib/utils";
 
@@ -11,32 +10,27 @@ interface BlogPostPageProps {
 }
 
 const BlogPostPage: React.FC<BlogPostPageProps> = ({ post }) => {
-  //   const content = documentToReactComponents(post.content);
-
   return (
-    <article className="max-w-screen-lg mx-auto w-full p-4">
+    <article className="max-w-screen-lg mx-auto w-full p-4 bg-background text-foreground">
       <div className="max-w-screen-md mt-8 mb-8">
-        <p className="text-sm text-gray-500 mb-2 underline">
+        <p className="text-sm text-foreground-300 mb-2 underline">
           Published on: {formatDate(post.publishedDate)}
         </p>
-        <h1 className="text-3xl font-semibold text-gray-900">{post.title}</h1>
+        <h1 className="text-3xl font-semibold text-foreground">{post.title}</h1>
       </div>
 
       {post.image && (
         <div className="relative h-96 mb-8">
-          {/* <div>{post.image.fields.file.url}</div> */}
           <Image
             src={post.image.file.url}
             alt={post.title}
             layout="fill"
-            // objectFit="cover"
             className="rounded-lg shadow-lg"
           />
         </div>
       )}
 
-      <div className="max-w-screen-md text-lg justified-text">
-        {/* <div className="">{content}</div> */}
+      <div className="max-w-screen-md text-lg text-foreground-200 justified-text">
         <BlogPostContent content={post.body}></BlogPostContent>
       </div>
     </article>

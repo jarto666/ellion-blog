@@ -13,7 +13,7 @@ const HomePage: React.FC<HomePageProps> = ({ posts }) => {
   return (
     <div className="flex flex-col">
       {/* Hero section */}
-      <div className="w-full bg-gray-100 border-b-4">
+      <div className="w-full bg-background-secondary text-foreground border-b-4 border-secondary">
         <div className="max-w-screen-lg mx-auto w-full px-4 py-16">
           <h1 className="text-4xl font-bold mb-4">
             Mastering <span className="text-accent">Code</span>, <br />
@@ -29,16 +29,18 @@ const HomePage: React.FC<HomePageProps> = ({ posts }) => {
       </div>
 
       {/* Recent posts section */}
-      <div className="max-w-screen-lg mx-auto w-full p-4">
+      <div className="max-w-screen-lg mx-auto w-full p-4 bg-background text-foreground">
         <h2 className="text-3xl my-8">Recent posts</h2>
         <BlogPostList posts={posts}></BlogPostList>
 
-        <button
-          onClick={() => router.push("/blog")}
-          className="px-4 py-2 bg-accent text-white rounded hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        >
-          See all posts
-        </button>
+        <div className="flex justify-center">
+          <button
+            onClick={() => router.push("/blog")}
+            className="px-4 py-2 bg-accent text-foreground-secondary rounded hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent hover:bg-accent-secondary"
+          >
+            See all posts
+          </button>
+        </div>
       </div>
     </div>
   );

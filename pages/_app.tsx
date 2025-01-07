@@ -3,6 +3,7 @@ import Layout from "../components/layout"; // Import the Layout component
 import "../styles/globals.css"; // Global styles
 
 import localFont from "next/font/local";
+import { ThemeProvider } from "../context/ThemeContext";
 
 const syncopate = localFont({
   src: [
@@ -28,11 +29,13 @@ const nunito = localFont({
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${syncopate.variable} ${nunito.variable}`}>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </div>
+    <ThemeProvider>
+      <div className={`${syncopate.variable} ${nunito.variable}`}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </div>
+    </ThemeProvider>
   );
 }
 

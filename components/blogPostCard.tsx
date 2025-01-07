@@ -18,16 +18,18 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({
   publishedDate,
 }) => {
   return (
-    <div className="flex flex-col md:flex-row bg-white rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border-2 border-gray-100">
+    <div className="flex flex-col md:flex-row bg-background-secondary text-foreground rounded-lg overflow-hidden hover:shadow-md hover:ring-opacity-50 hover:shadow-accent-secondary transition-shadow duration-300 border-2 border-accent-secondary">
       {/* Left Section */}
       <div className="p-6 py-6 flex flex-col justify-between flex-1">
         <div>
-          <h2 className="text-2xl font-bold text-gray-800 hover:text-accent transition-colors">
+          <h2 className="text-2xl font-bold text-foreground hover:text-accent transition-colors">
             <a href={`/blog/${slug}`}>{title}</a>
           </h2>
-          <p className="text-gray-600 mt-2 line-clamp-3 h-20">{description}</p>
+          <p className="text-foreground-200 mt-2 line-clamp-3 h-20">
+            {description}
+          </p>
         </div>
-        <p className="text-sm text-gray-500 mt-4">
+        <p className="text-sm text-foreground-300 mt-4">
           {formatDate(publishedDate)}
         </p>
       </div>
@@ -39,12 +41,9 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({
             <Image
               src={imageUrl}
               alt={title}
-              //   width={16}
-              //   height={9}
               layout="fill"
               className="object-cover w-full h-full"
               quality={100}
-              objectFit="cover"
               unoptimized
             />
           )}

@@ -23,9 +23,9 @@ const client = new StoryblokClient({
 const blogPostsContentName = "blog-posts/";
 
 interface FetchBlogPostsOptions {
-  order?: string; // Sorting order
-  limit?: number; // Number of items per page
-  page?: number; // Number of items to skip
+  order?: string;
+  limit?: number;
+  page?: number;
 }
 
 export const fetchBlogPosts = async (
@@ -33,7 +33,7 @@ export const fetchBlogPosts = async (
 ): Promise<BlogPost[]> => {
   const {
     order = "content.publishedDate:desc",
-    limit = 10,
+    limit = 100,
     page = 0,
   } = options;
 
@@ -45,17 +45,11 @@ export const fetchBlogPosts = async (
     per_page: limit,
   });
 
-  // console.log(response.data.stories[0].content.content);
-  // console.log(
-  //   JSON.stringify(response.data.stories[0].content.content.content[1])
-  // );
-  // console.log(response.data.stories[0].content.body);
-
   return response.data.stories.map((item: any) => ({
     id: item.id,
     title: item.name,
     description: item.content.description,
-    slug: item.slug,
+    slug: item.content.slug,
     content: item.content.content,
     body: item.content.body,
     image: item.content.image
