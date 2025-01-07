@@ -37,7 +37,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({
         <a href={`/blog/${slug}`}>
           {imageUrl && (
             <Image
-              src={`https:${imageUrl}`}
+              src={imageUrl}
               alt={title}
               //   width={16}
               //   height={9}

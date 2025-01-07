@@ -6,3 +6,12 @@ export const formatDate = (date: string) => {
   });
   return formattedDate;
 };
+
+export const mapLanguageNameForRendering = (lang: string) => {
+  switch (lang) {
+    case "sh":
+      return "bash";
+    default:
+      return "c";
+  }
+};

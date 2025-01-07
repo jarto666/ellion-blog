@@ -12,3 +12,7 @@
 body {
   font-family: "NunitoSans", sans-serif;
 } */
+
+.react-syntax-highlighter-line-number {
+  min-width: 2.25em !important;
+}

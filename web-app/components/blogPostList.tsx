@@ -1,4 +1,4 @@
-import { BlogPost } from "../lib/contentful";
+import { BlogPost } from "../lib/storyblok";
 import BlogPostCard from "./blogPostCard";
 
 interface BlogPostListProps {
@@ -10,17 +10,17 @@ const BlogPostList: React.FC<BlogPostListProps> = ({ posts }) => {
     <>
       <div>
         {posts.map((post) => (
-          <>
+          <div key={post.id}>
             <BlogPostCard
               id={post.id}
               title={post.title}
               description={post.description}
               slug={post.slug}
-              imageUrl={post.image?.fields.file.url}
+              imageUrl={post.image?.file.url}
               publishedDate={post.publishedDate}
             ></BlogPostCard>
             <br />
-          </>
+          </div>
         ))}
       </div>
     </>

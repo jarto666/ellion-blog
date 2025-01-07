@@ -10,7 +10,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className={`font-nunito flex flex-col min-h-screen`}>
-      <header className="flex justify-between border-b-4">
+      <header className="sticky top-0 z-50 bg-white flex justify-between border-b-4">
         <nav className="max-w-screen-lg mx-auto py-4 px-4 w-full">
           <div className="flex items-center w-full">
             {/* Left side (Logo and Nav links) */}
@@ -26,13 +26,13 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                 </Link>
               </li>
               <li className="flex items-center justify-center">
-                <Link href="/about" className="hover:underline">
-                  About
+                <Link href="/blog" className="hover:underline">
+                  Articles
                 </Link>
               </li>
               <li className="flex items-center justify-center">
-                <Link href="/blog" className="hover:underline">
-                  Blog
+                <Link href="/about" className="hover:underline">
+                  About me
                 </Link>
               </li>
             </ul>
@@ -49,7 +49,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         </nav>
       </header>
 
-      <main className="flex-grow mx-auto w-full">{children}</main>
+      <main className="flex-grow mx-auto w-full bg-gray-50">{children}</main>
 
       <footer className="bg-secondary text-white text-center">
         <div className="py-4 max-w-screen-lg mx-auto px-4 w-full">
