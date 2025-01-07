@@ -20,11 +20,12 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ post }) => {
       </div>
 
       {post.image && (
-        <div className="relative h-96 mb-8">
+        <div className="relative h-auto mb-8">
           <Image
             src={post.image.file.url}
             alt={post.title}
-            layout="fill"
+            width={1920}
+            height={1280}
             className="rounded-lg shadow-lg"
           />
         </div>

@@ -70,5 +70,8 @@ body {
   --accent-100: #b3e5f0;
   --accent-200: #80d1e6;
 
-  --accent-secondary: #006d8d;
+  --accent-secondary: #0c3440;
+
+  --button-foreground: var(--foreground-secondary);
+  --button-foreground-hover: var(--foreground);
 }

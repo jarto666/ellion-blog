@@ -48,6 +48,12 @@ export default {
           // 800: "#004252",
           // 900: "#002129",
         },
+        button: {
+          foreground: {
+            DEFAULT: "var(--button-foreground)",
+            hover: "var(--button-foreground-hover)",
+          },
+        },
       },
       fontFamily: {
         nunito: "var(--font-nunito)",

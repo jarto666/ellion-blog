@@ -36,7 +36,7 @@ const HomePage: React.FC<HomePageProps> = ({ posts }) => {
         <div className="flex justify-center">
           <button
             onClick={() => router.push("/blog")}
-            className="px-4 py-2 bg-accent text-foreground-secondary rounded hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent hover:bg-accent-secondary"
+            className="px-4 py-2 bg-accent text-button-foreground hover:text-button-foreground-hover rounded hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent hover:bg-accent-secondary"
           >
             See all posts
           </button>
