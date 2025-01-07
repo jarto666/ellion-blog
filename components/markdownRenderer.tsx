@@ -120,7 +120,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ markdown }) => {
           ),
           table: ({ ...props }) => (
             <table
-              className="min-w-full table-auto border-collapse bg-background-100"
+              className="table-auto border-collapse bg-background-100 block overflow-auto"
               {...props}
             />
           ),

@@ -59,6 +59,9 @@ export default {
         nunito: "var(--font-nunito)",
         syncopate: "var(--font-syncopate)",
       },
+      screens: {
+        xs: "480px", // Typical smaller screen size
+      },
     },
   },
   plugins: [],

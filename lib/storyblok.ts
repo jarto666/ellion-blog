@@ -26,6 +26,7 @@ interface FetchBlogPostsOptions {
   order?: string;
   limit?: number;
   page?: number;
+  searchTerm?: string;
 }
 
 export const fetchBlogPosts = async (
@@ -35,6 +36,7 @@ export const fetchBlogPosts = async (
     order = "content.publishedDate:desc",
     limit = 100,
     page = 0,
+    searchTerm,
   } = options;
 
   const response = await client.get("cdn/stories", {
@@ -43,6 +45,7 @@ export const fetchBlogPosts = async (
     sort_by: order,
     page: page,
     per_page: limit,
+    search_term: searchTerm ?? "",
   });
 
   return response.data.stories.map((item: any) => ({
