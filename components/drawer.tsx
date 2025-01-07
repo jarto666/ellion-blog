@@ -58,7 +58,7 @@ const FullScreenDrawer: React.FC<FullScreenDrawerProps> = ({ children }) => {
   }, [router.events]);
 
   const ToggleButton = (
-    <button className="outline-1 flex" onClick={toggleDrawer}>
+    <button className="outline-1 flex items-center" onClick={toggleDrawer}>
       <MdMenu size={22} className="hover:text-accent"></MdMenu>
     </button>
   );
@@ -78,13 +78,15 @@ const FullScreenDrawer: React.FC<FullScreenDrawerProps> = ({ children }) => {
         } xs:w-[400px] xs:max-w-full flex flex-col`}
       >
         {/* Close Button */}
-        <div className="flex justify-between p-4 bg-background">
-          <div className="font-syncopate text-2xl mr-8">
-            <Link href="/" className="hover:text-accent">
+        <div className="flex justify-between bg-background border-b-4 border-secondary">
+          <div className="font-syncopate text-2xl mr-8 flex justify-start">
+            <Link href="/" className="hover:text-accent p-4">
               TECHQUILL
             </Link>
           </div>
-          {ToggleButton}
+          <div className="p-4 flex justify-center items-center">
+            {ToggleButton}
+          </div>
         </div>
 
         {/* Drawer Content */}

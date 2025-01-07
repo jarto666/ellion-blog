@@ -44,7 +44,7 @@ const NavLinks = ({ vertical = false }: { vertical?: boolean }) => {
               // className="h-14 hover:text-accent w-full"
               className={`flex justify-start ${
                 vertical
-                  ? "h-16 items-center"
+                  ? "h-16 items-center p-4 w-full"
                   : "hover:text-accent hover:underline h-full"
               }`}
             >
@@ -79,17 +79,17 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="font-nunito flex flex-col min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 bg-background text-foreground border-b-4 border-secondary">
-        <nav className="max-w-screen-lg mx-auto py-4 px-4 w-full">
+        <nav className="max-w-screen-lg mx-auto w-full">
           <div className="flex items-center w-full">
             {/* Logo */}
-            <div className="font-syncopate text-2xl mr-8">
-              <Link href="/" className="hover:text-accent">
+            <div className="font-syncopate text-2xl mr-8 flex justify-start">
+              <Link href="/" className="hover:text-accent p-4">
                 TECHQUILL
               </Link>
             </div>
 
             {/* Nav Links and Socials (Desktop) */}
-            <div className="md:flex flex-grow items-center hidden">
+            <div className="md:flex flex-grow items-center hidden pr-4">
               {/* Nav Links */}
               <div className="flex-grow">
                 <NavLinks></NavLinks>
@@ -107,10 +107,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
             </div>
 
             {/* Nav Links and Socials (Mobile) */}
-            <div className="md:hidden flex flex-grow justify-end">
+            <div className="md:hidden flex flex-grow justify-end p-4">
               <FullScreenDrawer>
                 <div className="flex flex-col justify-between h-full">
-                  <div className="mb-8 p-4">
+                  <div className="mb-8">
                     <NavLinks vertical={true}></NavLinks>
                   </div>
                   <div className="flex justify-between flex-row bg-background p-4">
