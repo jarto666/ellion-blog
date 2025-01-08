@@ -28,10 +28,23 @@ const nunito = localFont({
   variable: "--font-nunito",
 });
 
+const logo = localFont({
+  src: [
+    {
+      path: "../public/fonts/BrunoAce-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-logo",
+});
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
-      <div className={`${syncopate.variable} ${nunito.variable}`}>
+      <div
+        className={`${syncopate.variable} ${nunito.variable} ${logo.variable}`}
+      >
         <SpeedInsights />
         <Layout>
           <Component {...pageProps} />

@@ -82,7 +82,7 @@ const FullScreenDrawer: React.FC<FullScreenDrawerProps> = ({ children }) => {
         <div className="flex justify-between bg-background border-b-4 border-secondary">
           <div className="font-syncopate text-2xl mr-8 flex justify-start">
             <Link href="/" className="hover:text-accent p-4">
-              TECHQUILL
+              MUTEXIS
             </Link>
           </div>
           <div className="p-4 flex justify-center items-center">

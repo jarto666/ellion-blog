@@ -58,6 +58,7 @@ export default {
       fontFamily: {
         nunito: "var(--font-nunito)",
         syncopate: "var(--font-syncopate)",
+        logo: "var(--font-logo)",
       },
       screens: {
         xs: "480px", // Typical smaller screen size

@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect, useState } from "react";
 import { MdMenu } from "react-icons/md";
+import LogoLink from "./logo";
 
 interface FullScreenDrawerProps {
   children: ReactNode;
@@ -79,10 +79,8 @@ const FullScreenDrawer: React.FC<FullScreenDrawerProps> = ({ children }) => {
       >
         {/* Close Button */}
         <div className="flex justify-between bg-background border-b-4 border-secondary">
-          <div className="font-syncopate text-2xl mr-8 flex justify-start">
-            <Link href="/" className="hover:text-accent p-4">
-              TECHQUILL
-            </Link>
+          <div className="mr-4">
+            <LogoLink />
           </div>
           <div className="p-4 flex justify-center items-center">
             {ToggleButton}

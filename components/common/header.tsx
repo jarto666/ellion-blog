@@ -1,8 +1,8 @@
-import Link from "next/link";
 import NavLinks from "./navLinks";
 import SocialLinks from "./socialLinks";
 import { ThemeToggle } from "./themeToggle";
 import FullScreenDrawer from "./drawer";
+import LogoLink from "./logo";
 
 const Header = () => {
   return (
@@ -10,10 +10,8 @@ const Header = () => {
       <nav className="max-w-screen-lg mx-auto w-full">
         <div className="flex items-center w-full">
           {/* Logo */}
-          <div className="font-syncopate text-2xl mr-8 flex justify-start">
-            <Link href="/" className="hover:text-accent p-4">
-              TECHQUILL
-            </Link>
+          <div className="mr-4">
+            <LogoLink />
           </div>
 
           {/* Nav Links and Socials (Desktop) */}
