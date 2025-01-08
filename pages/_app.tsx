@@ -4,6 +4,7 @@ import "../styles/globals.css"; // Global styles
 
 import localFont from "next/font/local";
 import { ThemeProvider } from "../context/ThemeContext";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const syncopate = localFont({
   src: [
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
       <div className={`${syncopate.variable} ${nunito.variable}`}>
+        <SpeedInsights />
         <Layout>
           <Component {...pageProps} />
         </Layout>
