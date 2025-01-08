@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import { fetchBlogPosts } from "../../lib/storyblok";
 import { BlogPost } from "../../lib/storyblok"; // Import the BlogPost interface
 import BlogPostList from "../../components/blog/blogPostList";
+import HeadTitle from "../../components/common/title";
 
 interface BlogPageProps {
   posts: BlogPost[];
@@ -9,10 +10,13 @@ interface BlogPageProps {
 
 const BlogPage: React.FC<BlogPageProps> = ({ posts }) => {
   return (
-    <div className="max-w-screen-lg mx-auto w-full p-4">
-      <h1 className="text-3xl mt-4 mb-8">Articles</h1>
-      <BlogPostList posts={posts}></BlogPostList>
-    </div>
+    <>
+      <HeadTitle title="TQ | Articles" />
+      <div className="max-w-screen-lg mx-auto w-full p-4">
+        <h1 className="text-3xl mt-4 mb-8">Articles</h1>
+        <BlogPostList posts={posts}></BlogPostList>
+      </div>
+    </>
   );
 };
 

@@ -14,7 +14,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ post }) => {
   return (
     <>
       <Head>
-        <title>{`${post.title} | Ellion Blog`}</title>
+        <title>{`TQ | ${post.title}`}</title>
         <meta name="description" content={post.description} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.description} />

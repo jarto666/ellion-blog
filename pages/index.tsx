@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import { BlogPost, fetchBlogPosts } from "../lib/storyblok";
 import BlogPostList from "../components/blog/blogPostList";
 import { useRouter } from "next/router";
+import HeadTitle from "../components/common/title";
 
 interface HomePageProps {
   posts: BlogPost[];
@@ -11,38 +12,42 @@ const HomePage: React.FC<HomePageProps> = ({ posts }) => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col">
-      {/* Hero section */}
-      <div className="w-full bg-background-secondary text-foreground border-b-4 border-secondary">
-        <div className="max-w-screen-lg mx-auto w-full px-4 py-16">
-          <h1 className="text-4xl font-bold mb-4">
-            Mastering <span className="text-accent">Code</span>, <br />
-            <span className="text-accent">Data</span>, and{" "}
-            <span className="text-accent">Productivity</span>
-          </h1>
-          <p className="text-lg">
-            Exploring the art of software engineering, the power of data-driven
-            <br />
-            solutions, and strategies to work smarter every day.
-          </p>
+    <>
+      <HeadTitle title="TQ | Home" />
+      <div className="flex flex-col">
+        {/* Hero section */}
+        <div className="w-full bg-background-secondary text-foreground border-b-4 border-secondary">
+          <div className="max-w-screen-lg mx-auto w-full px-4 py-16">
+            <h1 className="text-4xl font-bold mb-4">
+              Mastering <span className="text-accent">Code</span>, <br />
+              <span className="text-accent">Data</span>, and{" "}
+              <span className="text-accent">Productivity</span>
+            </h1>
+            <p className="text-lg">
+              Exploring the art of software engineering, the power of
+              data-driven
+              <br />
+              solutions, and strategies to work smarter every day.
+            </p>
+          </div>
+        </div>
+
+        {/* Recent posts section */}
+        <div className="max-w-screen-lg mx-auto w-full p-4 bg-background text-foreground">
+          <h2 className="text-3xl my-8">Recent posts</h2>
+          <BlogPostList posts={posts}></BlogPostList>
+
+          <div className="flex justify-center">
+            <button
+              onClick={() => router.push("/blog")}
+              className="px-4 py-2 bg-accent text-button-foreground hover:text-button-foreground-hover rounded hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent hover:bg-accent-secondary"
+            >
+              See all posts
+            </button>
+          </div>
         </div>
       </div>
-
-      {/* Recent posts section */}
-      <div className="max-w-screen-lg mx-auto w-full p-4 bg-background text-foreground">
-        <h2 className="text-3xl my-8">Recent posts</h2>
-        <BlogPostList posts={posts}></BlogPostList>
-
-        <div className="flex justify-center">
-          <button
-            onClick={() => router.push("/blog")}
-            className="px-4 py-2 bg-accent text-button-foreground hover:text-button-foreground-hover rounded hover:bg-accent-600 focus:outline-none focus:ring-2 focus:ring-accent hover:bg-accent-secondary"
-          >
-            See all posts
-          </button>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 
