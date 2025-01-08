@@ -1,4 +1,4 @@
-import { GetStaticPaths, GetStaticProps, Metadata } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { fetchBlogPosts } from "../../lib/storyblok";
 import { BlogPost } from "../../lib/storyblok";
 import Image from "next/image";
@@ -14,7 +14,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ post }) => {
   return (
     <>
       <Head>
-        <title>{post.title} | Ellion Blog</title>
+        <title>{`${post.title} | Ellion Blog`}</title>
         <meta name="description" content={post.description} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.description} />
@@ -70,16 +70,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { notFound: true };
   }
   return { props: { post } };
-};
-
-// export const metadata = ({ post }: { post: BlogPost }) => ({
-//   title: post.title,
-//   description: post.description || "Read this amazing blog post on our site.",
-// });
-
-export const metadata: Metadata = {
-  title: "metatitle",
-  description: "metadescription",
 };
 
 export default BlogPostPage;
