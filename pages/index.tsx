@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next";
 import { BlogPost, fetchBlogPosts } from "../lib/storyblok";
-import BlogPostList from "../components/blogPostList";
+import BlogPostList from "../components/blog/blogPostList";
 import { useRouter } from "next/router";
 
 interface HomePageProps {

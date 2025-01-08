@@ -4,7 +4,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { mapLanguageNameForRendering } from "../lib/utils";
+import { mapLanguageNameForRendering } from "../../lib/utils";
 import { CodeBlock, nord } from "react-code-blocks";
 
 interface MarkdownRendererProps {

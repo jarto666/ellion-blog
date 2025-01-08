@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { fetchBlogPosts } from "../../lib/storyblok";
 import { BlogPost } from "../../lib/storyblok";
 import Image from "next/image";
-import BlogPostContent from "../../components/blogPostContent";
+import BlogPostContent from "../../components/blog/blogPostContent";
 import { formatDate } from "../../lib/utils";
 
 interface BlogPostPageProps {

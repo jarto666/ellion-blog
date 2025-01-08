@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import { fetchBlogPosts } from "../../lib/storyblok";
 import { BlogPost } from "../../lib/storyblok"; // Import the BlogPost interface
-import BlogPostList from "../../components/blogPostList";
+import BlogPostList from "../../components/blog/blogPostList";
 
 interface BlogPageProps {
   posts: BlogPost[];

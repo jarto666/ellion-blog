@@ -1,4 +1,4 @@
-import { BlogPost } from "../lib/storyblok";
+import { BlogPost } from "../../lib/storyblok";
 import BlogPostCard from "./blogPostCard";
 
 interface BlogPostListProps {

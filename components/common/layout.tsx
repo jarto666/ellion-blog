@@ -41,7 +41,6 @@ const NavLinks = ({ vertical = false }: { vertical?: boolean }) => {
           >
             <Link
               href={link.href}
-              // className="h-14 hover:text-accent w-full"
               className={`flex justify-start ${
                 vertical
                   ? "h-16 items-center p-4 w-full"
