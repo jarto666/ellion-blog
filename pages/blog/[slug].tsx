@@ -14,7 +14,7 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({ post }) => {
   return (
     <>
       <Head>
-        <title>{`TQ | ${post.title}`}</title>
+        <title>{`MUTEX | ${post.title}`}</title>
         <meta name="description" content={post.description} />
         <meta property="og:title" content={post.title} />
         <meta property="og:description" content={post.description} />

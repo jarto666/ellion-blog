@@ -47,6 +47,7 @@ export default {
           // 700: "#00627b",
           // 800: "#004252",
           // 900: "#002129",
+          divider: "var(--accent-divider)",
         },
         button: {
           foreground: {

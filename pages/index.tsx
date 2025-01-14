@@ -13,7 +13,7 @@ const HomePage: React.FC<HomePageProps> = ({ posts }) => {
 
   return (
     <>
-      <HeadTitle title="TQ | Home" />
+      <HeadTitle title="MUTEX | Home" />
       <div className="flex flex-col">
         {/* Hero section */}
         <div className="w-full bg-background-secondary text-foreground border-b-4 border-secondary">
